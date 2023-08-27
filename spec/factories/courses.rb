@@ -21,7 +21,6 @@
 FactoryBot.define do
   factory :course do
     name { 'Curso - Ruby on Rails' }
-
     user
 
     after(:create) do |coursa, _evaluator|

@@ -26,9 +26,9 @@ require 'open-uri'
 FactoryBot.define do
   factory :profile do
     name { FFaker::Name.name }
+    phone { FFaker::PhoneNumber.phone_number }
     gender { Profile.genders.keys.sample }
     birthdate { "#{rand(28)}/#{12}/#{rand(1980..2010)}" }
-
     user
 
     after(:create) do |user, _evaluator|

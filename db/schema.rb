@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_27_194811) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_27_200330) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -63,6 +63,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_194811) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
+  create_table "lessons", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "video_path"
+    t.integer "section_id", null: false
+    t.integer "course_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_lessons_on_course_id"
+    t.index ["section_id"], name: "index_lessons_on_section_id"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "picture"
     t.string "name"
@@ -74,6 +88,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_194811) do
     t.string "slug"
     t.string "phone"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sections_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -93,5 +115,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_194811) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "courses", "users"
+  add_foreign_key "lessons", "courses"
+  add_foreign_key "lessons", "sections"
+  add_foreign_key "lessons", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "sections", "users"
 end

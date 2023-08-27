@@ -30,7 +30,6 @@ FactoryBot.define do
     zipcode { FFaker::Address.zip_code }
     city { FFaker::Address.city }
     state { FFaker::Address.country_code }
-
     user
 
     trait :with_complement do
