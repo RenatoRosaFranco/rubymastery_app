@@ -26,7 +26,9 @@ class User < ApplicationRecord
   self.primary_key = 'id'
 
   # Relationships
+  has_one :address
   has_one :profile
+  
   has_many :courses
 
   # Include default devise modules. Others available are:

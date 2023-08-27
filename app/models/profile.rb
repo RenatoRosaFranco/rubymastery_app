@@ -3,8 +3,11 @@
 # Table name: profiles
 #
 #  id         :integer          not null, primary key
+#  birthdate  :date
+#  gender     :integer
 #  name       :string
 #  picture    :string
+#  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer          not null
@@ -22,6 +25,9 @@ class Profile < ApplicationRecord
   # Properties
   self.table_name = 'profiles'
   self.primary_key = 'id'
+
+  # Enum
+  enum gender: ['male', 'female']
 
   # Relationships
   belongs_to :user
