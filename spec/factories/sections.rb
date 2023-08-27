@@ -6,19 +6,22 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  course_id  :integer          not null
 #  user_id    :integer          not null
 #
 # Indexes
 #
-#  index_sections_on_user_id  (user_id)
+#  index_sections_on_course_id  (course_id)
+#  index_sections_on_user_id    (user_id)
 #
 # Foreign Keys
 #
-#  user_id  (user_id => users.id)
+#  course_id  (course_id => courses.id)
+#  user_id    (user_id => users.id)
 #
 FactoryBot.define do
   factory :section do
-    name { 'Introdução' }
+    name { FFaker::Book.genre }
 
     user
   end
