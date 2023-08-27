@@ -1,9 +1,9 @@
 # == Schema Information
 #
-# Table name: sections
+# Table name: course_members
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  done       :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  course_id  :integer          not null
@@ -11,23 +11,16 @@
 #
 # Indexes
 #
-#  index_sections_on_course_id  (course_id)
-#  index_sections_on_user_id    (user_id)
+#  index_course_members_on_course_id  (course_id)
+#  index_course_members_on_user_id    (user_id)
 #
 # Foreign Keys
 #
 #  course_id  (course_id => courses.id)
 #  user_id    (user_id => users.id)
 #
-class Section < ApplicationRecord
+require 'rails_helper'
 
-  # Properties
-  self.table_name  = 'sections'
-  self.primary_key = 'id'
-
-  # Relationships
-  has_many :annotations
-  has_many :lessons
-  belongs_to :course
-  belongs_to :user
+RSpec.describe CourseMember, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

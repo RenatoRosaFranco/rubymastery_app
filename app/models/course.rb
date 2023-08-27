@@ -27,7 +27,11 @@ class Course < ApplicationRecord
   self.primary_key = 'id'
 
   # Relationships
+  has_many :annotations
+  has_many :course_members
+  has_many :members, through: :course_members
   has_many :modules, class_name: 'Section'
   has_many :lessons
+  
   belongs_to :user
 end

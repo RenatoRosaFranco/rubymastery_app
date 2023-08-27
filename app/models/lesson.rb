@@ -34,6 +34,7 @@ class Lesson < ApplicationRecord
   self.primary_key = 'id'
 
   # Relationships
+  has_many :annotations
   belongs_to :section
   belongs_to :course
   belongs_to :user

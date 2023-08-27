@@ -28,7 +28,8 @@ class User < ApplicationRecord
   # Relationships
   has_one :address
   has_one :profile
-  
+
+  has_many :annotations
   has_many :courses
 
   # Include default devise modules. Others available are:
