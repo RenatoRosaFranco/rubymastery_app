@@ -24,13 +24,17 @@
 #
 FactoryBot.define do
   factory :address do
-    street { "MyString" }
-    number { 1 }
-    complement { "MyString" }
-    neighborhood { "MyString" }
-    zipcode { "MyString" }
-    city { "MyString" }
-    state { "MyString" }
-    user { nil }
+    street { FFaker::Address.street_address }
+    number { FFaker::Address.building_number }
+    neighborhood { FFaker::Address.neighborhood }
+    zipcode { FFaker::Address.zip_code }
+    city { FFaker::Address.city }
+    state { FFaker::Address.country_code }
+
+    user
+
+    trait :with_complement do
+      complement { FFaker::Address.secondary_address }
+    end
   end
 end

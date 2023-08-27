@@ -25,6 +25,8 @@
 #  user_id  (user_id => users.id)
 #
 class Address < ApplicationRecord
+
+  # Properties
   self.table_name  = 'addresses'
   self.primary_key = 'id'
 

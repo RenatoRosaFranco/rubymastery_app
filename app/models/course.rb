@@ -19,6 +19,8 @@
 #  user_id  (user_id => users.id)
 #
 class Course < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: [:slugged]
 
   # Properties
   self.table_name  = 'courses'

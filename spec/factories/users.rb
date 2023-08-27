@@ -30,6 +30,7 @@ FactoryBot.define do
   end
 
   after(:create) do |user, _evaluator|
+    create(:address, user: user)
     create(:profile, user: user)
   end
 end

@@ -21,6 +21,8 @@
 #  user_id  (user_id => users.id)
 #
 class Profile < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: [:slugged]
 
   # Properties
   self.table_name = 'profiles'
