@@ -28,5 +28,6 @@ class Course < ApplicationRecord
 
   # Relationships
   has_many :modules, class_name: 'Section'
+  has_many :lessons
   belongs_to :user
 end

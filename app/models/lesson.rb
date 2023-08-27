@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
+#  slug        :string
 #  title       :string
 #  video_path  :string
 #  created_at  :datetime         not null

@@ -22,7 +22,7 @@
 FactoryBot.define do
   factory :section do
     name { FFaker::Book.genre }
-
-    user
+    course { association :course }
+    user { association :user }
   end
 end

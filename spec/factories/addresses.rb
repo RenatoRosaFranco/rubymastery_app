@@ -24,16 +24,16 @@
 #
 FactoryBot.define do
   factory :address do
-    street { FFaker::Address.street_address }
-    number { FFaker::Address.building_number }
-    neighborhood { FFaker::Address.neighborhood }
-    zipcode { FFaker::Address.zip_code }
-    city { FFaker::Address.city }
-    state { FFaker::Address.country_code }
-    user
+    street { FFaker::AddressUS.street_address }
+    number { FFaker::AddressUS.building_number }
+    neighborhood { FFaker::AddressUS.neighborhood }
+    zipcode { FFaker::AddressUS.zip_code }
+    city { FFaker::AddressUS.city }
+    state { FFaker::AddressUS.country_code }
+    user { association :user }
 
     trait :with_complement do
-      complement { FFaker::Address.secondary_address }
+      complement { FFaker::AddressUS.secondary_address }
     end
   end
 end
