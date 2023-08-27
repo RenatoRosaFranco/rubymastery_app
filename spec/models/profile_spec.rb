@@ -6,6 +6,7 @@
 #  birthdate  :date
 #  gender     :integer
 #  name       :string
+#  phone      :string
 #  picture    :string
 #  slug       :string
 #  created_at :datetime         not null
