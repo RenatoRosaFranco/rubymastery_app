@@ -29,7 +29,7 @@
 FactoryBot.define do
   factory :lesson, class: Course::Lesson do
     title { FFaker::Book.title }
-    level { Course::Lesson.level.keys.sample }
+    level { Course::Lesson.levels.keys.sample }
     description { FFaker::Lorem.paragraphs(rand(2..4)).join }
     video_path { FFaker::Youtube.embed_url }
     section { association :section }
