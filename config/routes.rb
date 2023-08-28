@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :annotations, only: [:index]
     resources :certificates,only: [:index, :show]
     resources :courses, only: [:index, :show] do
-      resources :lessons, only: [:show] do
+      resources :lessons, only: [:show]
     end
 
     resources :profiles, only: [:edit, :update]
