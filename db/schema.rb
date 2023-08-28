@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_025351) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_032537) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -65,6 +65,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_025351) do
     t.index ["lesson_id"], name: "index_annotations_on_lesson_id"
     t.index ["section_id"], name: "index_annotations_on_section_id"
     t.index ["user_id"], name: "index_annotations_on_user_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "thumbnail"
+    t.string "title"
+    t.text "body"
+    t.string "slug"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "tags"
+    t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "certificates", force: :cascade do |t|
@@ -182,6 +203,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_025351) do
   add_foreign_key "annotations", "lessons"
   add_foreign_key "annotations", "sections"
   add_foreign_key "annotations", "users"
+  add_foreign_key "articles", "users"
+  add_foreign_key "categories", "users"
   add_foreign_key "certificates", "courses"
   add_foreign_key "certificates", "users"
   add_foreign_key "course_members", "courses"

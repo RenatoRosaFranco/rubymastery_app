@@ -65,6 +65,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-erd'
   gem 'shoulda'
+  gem 'rubocop'
+  gem 'database_cleaner'
+  gem 'rails_best_practices'
+  gem 'rubycritic'
+  gem 'simplecov'
 end
 
 group :development do
