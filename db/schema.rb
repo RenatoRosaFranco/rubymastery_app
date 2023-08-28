@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_150416) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_153519) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -153,6 +153,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_150416) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "partners", force: :cascade do |t|
+    t.string "name"
+    t.integer "kind"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "picture"
     t.string "name"
@@ -189,6 +197,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_150416) do
     t.string "avatar"
     t.string "name"
     t.text "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

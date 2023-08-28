@@ -14,7 +14,7 @@ require 'open-uri'
 FactoryBot.define do
   factory :teacher, class: Course::Teacher do
     name { FFaker::Name.name }
-    bio { Faker::Lorem.paragraphs(rand(1..2)).join }
+    bio { FFaker::Lorem.paragraphs(rand(1..2)).join }
     
     after(:create) do |teacher, _evaluator|
       teacher.avatar.attach(

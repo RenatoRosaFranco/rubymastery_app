@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Course
-  class Teacher::Update
+module Marketing
+  class Testimonial::Create
     include Interactor
 
     def call

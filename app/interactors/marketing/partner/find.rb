@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Course
-  class Teacher::Update
+module Marketing
+  class Partner::Find
     include Interactor
 
     def call

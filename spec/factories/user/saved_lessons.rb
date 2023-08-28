@@ -19,7 +19,7 @@
 #  user_id    (user_id => users.id)
 #
 FactoryBot.define do
-  factory :user_saved_lesson, class: User::SavedLesson do
+  factory :saved_lesson, class: User::SavedLesson do
     user { association :user }
     lesson { association :lesson }
   end

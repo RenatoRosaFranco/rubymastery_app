@@ -20,8 +20,8 @@
 #  user_id  (user_id => users.id)
 #
 FactoryBot.define do
-  factory :category, class: 'Content::Category' do
-    name { FFaker::Book.category }
+  factory :category, class: Content::Category do
+    name { FFaker::Book.genre }
     user { association :user }
   end
 end
