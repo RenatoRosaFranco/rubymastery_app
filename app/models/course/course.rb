@@ -33,12 +33,12 @@ module Course
     # Relationships
     has_many :annotations,      class_name: 'User::Annotation'
     has_many :course_members,   class_name: 'Course::CourseMember'
-    
+
     has_many :members, through: :course_members, source: :user
-    
+
     has_many :modules, class_name: 'Course::Section'
     has_many :lessons, class_name: 'Course::Lesson'
-    
+
     belongs_to :user,  class_name: 'User::User'
   end
 end
