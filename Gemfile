@@ -35,6 +35,7 @@ gem "redis", "~> 4.0"
 gem 'devise'
 gem 'interactor'
 gem 'jquery-rails'
+gem 'draper'
 gem 'active_model_serializers'
 gem 'fast_jsonapi'
 gem 'friendly_id'
