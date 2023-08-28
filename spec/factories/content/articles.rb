@@ -2,16 +2,17 @@
 #
 # Table name: articles
 #
-#  id          :integer          not null, primary key
-#  body        :text
-#  slug        :string
-#  tags        :string
-#  thumbnail   :string
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer          not null
-#  user_id     :integer          not null
+#  id           :integer          not null, primary key
+#  body         :text
+#  discarded_at :datetime
+#  slug         :string
+#  tags         :string
+#  thumbnail    :string
+#  title        :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  category_id  :integer          not null
+#  user_id      :integer          not null
 #
 # Indexes
 #

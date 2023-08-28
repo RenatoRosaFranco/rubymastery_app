@@ -4,6 +4,7 @@
 #
 #  id                     :integer          not null, primary key
 #  admin                  :boolean          default(FALSE)
+#  discarded_at           :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  remember_created_at    :datetime
@@ -22,11 +23,16 @@ FactoryBot.define do
     email { FFaker::Internet.email }
     password { '!Test123' }
     password_confirmation { '!Test123' }
+    discarded_at { nil }
   end
 
   trait :admin do
     email { 'renato.franco@rubymastery.com' }
     admin { true }
+  end
+
+  trait :unvailable do
+    discarded_at { Date.today }
   end
 
   after(:create) do |user, _evaluator|

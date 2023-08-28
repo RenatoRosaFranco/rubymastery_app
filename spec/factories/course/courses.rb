@@ -2,13 +2,14 @@
 #
 # Table name: courses
 #
-#  id         :integer          not null, primary key
-#  cover      :string
-#  name       :string
-#  slug       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer          not null
+#  id           :integer          not null, primary key
+#  cover        :string
+#  discarded_at :datetime
+#  name         :string
+#  slug         :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  user_id      :integer          not null
 #
 # Indexes
 #

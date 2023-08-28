@@ -6,6 +6,7 @@
 #
 #  id                     :integer          not null, primary key
 #  admin                  :boolean          default(FALSE)
+#  discarded_at           :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  remember_created_at    :datetime
@@ -21,9 +22,14 @@
 #
 module User
   class User < ApplicationRecord
+    include Discard::Model
+
     # Properties
     self.table_name  = 'users'
     self.primary_key = 'id'
+
+    # Callbacks
+    after_create :create_profile, :create_address
 
     # Relationships
     has_one :address, class_name: 'User::Address'

@@ -73,6 +73,22 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     awesome_print (1.9.2)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.812.0)
+    aws-sdk-core (3.181.0)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.5)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-kms (1.71.0)
+      aws-sdk-core (~> 3, >= 3.177.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.134.0)
+      aws-sdk-core (~> 3, >= 3.181.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.6)
+    aws-sigv4 (1.6.0)
+      aws-eventstream (~> 1, >= 1.0.2)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -125,6 +141,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    discard (1.3.0)
+      activerecord (>= 4.2, < 8)
     docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -171,6 +189,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jmespath (1.6.2)
     jquery-rails (4.6.0)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -461,12 +480,14 @@ PLATFORMS
 DEPENDENCIES
   annotate
   awesome_print
+  aws-sdk-s3
   bootsnap
   bullet
   capybara
   database_cleaner
   debug
   devise
+  discard
   dotenv-rails
   factory_bot_rails
   ffaker

@@ -20,6 +20,8 @@
 #
 module Course
   class Course < ApplicationRecord
+    include Discard::Model
+
     extend FriendlyId
     friendly_id :name, use: [:slugged]
 

@@ -39,6 +39,8 @@ gem 'friendly_id'
 gem 'kaminari'
 gem 'sidekiq'
 gem 'sass-rails'
+gem 'aws-sdk-s3'
+gem 'discard'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
