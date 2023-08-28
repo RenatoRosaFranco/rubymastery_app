@@ -9,16 +9,16 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   # Dashboard
-  # namespace :dashboard do
-  #   get '/' => 'home#index'
+  namespace :dashboard do
+    get '/' => 'home#index'
 
-  #   resources :annotations, only: [:index]
-  #   resources :certificates,only: [:index, :show]
-  #   resources :courses, only: [:index, :show] do
-  #     resources :lessons, only: [:show] do
-  #   end
+    resources :annotations, only: [:index]
+    resources :certificates,only: [:index, :show]
+    resources :courses, only: [:index, :show] do
+      resources :lessons, only: [:show] do
+    end
 
-  #   resources :profiles, only: [:edit, :update]
-  #   resources :accounts, only: [:edit, :update, :destroy]
-  # end
+    resources :profiles, only: [:edit, :update]
+    resources :accounts, only: [:edit, :update, :destroy]
+  end
 end

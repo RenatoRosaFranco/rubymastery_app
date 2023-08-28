@@ -33,6 +33,7 @@ gem "redis", "~> 4.0"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 gem 'devise'
+gem 'interactor'
 gem 'jquery-rails'
 gem 'friendly_id'
 gem 'kaminari'
@@ -70,6 +71,8 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'rubycritic'
   gem 'simplecov'
+  gem 'foreman'
+  gem 'bullet'
 end
 
 group :development do
