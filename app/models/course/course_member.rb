@@ -21,6 +21,10 @@
 #
 module Course
   class CourseMember < ApplicationRecord
+    # Properties
+    self.table_name  = 'course_members'
+    self.primary_key = 'id'
+
     # Relationships
     belongs_to :course, class_name: 'Course::Course'
     belongs_to :user,   class_name: 'User::User'

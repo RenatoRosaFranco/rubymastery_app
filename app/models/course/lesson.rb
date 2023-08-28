@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
+#  level       :integer
 #  slug        :string
 #  title       :string
 #  video_path  :string
@@ -33,6 +34,9 @@ module Course
     # Properties
     self.table_name  = 'lessons'
     self.primary_key = 'id'
+
+    # Enum
+    enum level: ['beginner', 'intermediate', 'advanced']
 
     # Relationships
     has_many :annotations,   class_name: 'User::Annotation'

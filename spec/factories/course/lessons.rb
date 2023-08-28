@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
+#  level       :integer
 #  slug        :string
 #  title       :string
 #  video_path  :string
@@ -28,6 +29,7 @@
 FactoryBot.define do
   factory :lesson, class: Course::Lesson do
     title { FFaker::Book.title }
+    level { Course::Lesson.level.keys.sample }
     description { FFaker::Lorem.paragraphs(rand(2..4)).join }
     video_path { FFaker::Youtube.embed_url }
     section { association :section }

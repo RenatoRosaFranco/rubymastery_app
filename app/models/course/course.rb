@@ -27,6 +27,9 @@ module Course
     self.table_name  = 'courses'
     self.primary_key = 'id'
 
+    # Uploader
+    has_one_attached :cover
+
     # Relationships
     has_many :annotations,      class_name: 'User::Annotation'
     has_many :course_members,   class_name: 'Course::CourseMember'

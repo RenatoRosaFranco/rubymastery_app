@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
+#  level       :integer
 #  slug        :string
 #  title       :string
 #  video_path  :string

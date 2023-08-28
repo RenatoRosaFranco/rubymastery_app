@@ -27,8 +27,11 @@ module User
     friendly_id :name, use: [:slugged]
 
     # Properties
-    self.table_name = 'profiles'
+    self.table_name  = 'profiles'
     self.primary_key = 'id'
+
+    # Uploader
+    has_one_attached :picture
 
     # Enum
     enum gender: ['male', 'female']
