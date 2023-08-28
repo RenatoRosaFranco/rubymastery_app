@@ -30,7 +30,7 @@ module User
     has_one :profile, class_name: 'User::Profile'
 
     has_many :saved_lessons, class_name: 'User::SavedLesson'
-    has_many :certificates,  class_name: 'User::Certificates'
+    has_many :certificates,  class_name: 'User::Certificate'
     has_many :annotations,   class_name: 'User::Annotation'
     has_many :courses,       class_name: 'Course::Course'
 

@@ -1,4 +1,4 @@
- n# frozen_string_literal: true
+ # frozen_string_literal: true
 
 module Dashboard
   class ProfilesController < HomeController

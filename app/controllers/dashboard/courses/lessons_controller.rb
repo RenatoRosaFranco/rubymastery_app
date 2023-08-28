@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module Dashboard
-  class LessonsController < CourseController
-    def show
+  module Courses
+    class LessonsController < HomeController
+      def show
+      end
     end
   end
 end
